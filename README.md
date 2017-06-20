@@ -21,3 +21,8 @@ Example
 -------
 
 Forthcoming!
+
+Prior Art
+---------
+
+This package was inspired by [f90nml](https://github.com/marshallward/f90nml) and [glmtools](https://github.com/USGS-R/glmtools).
