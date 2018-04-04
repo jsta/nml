@@ -44,6 +44,24 @@ read_nml("tests/testthat/sample.nml")
 #> [1] "nml"
 ```
 
+``` r
+library(reticulate)
+use_python("/home/jose/anaconda3/bin/python")
+
+f90nml <- import("f90nml")
+pd <- import("pandas")
+
+nml <- f90nml$read("tests/testthat/sample.nml")
+
+pd$DataFrame$from_dict(nml)
+#>                config_nml
+#> input             wind.nc
+#> layout              8, 16
+#> steps                 864
+#> use_biharmonic      FALSE
+#> visc                1e-04
+```
+
 Prior Art
 ---------
 

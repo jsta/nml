@@ -34,6 +34,18 @@ library(nml)
 read_nml("tests/testthat/sample.nml")
 ```
 
+```{r }
+library(reticulate)
+use_python("/home/jose/anaconda3/bin/python")
+
+f90nml <- import("f90nml")
+pd <- import("pandas")
+
+nml <- f90nml$read("tests/testthat/sample.nml")
+
+pd$DataFrame$from_dict(nml)
+```
+
 ## Prior Art
 
 This package was inspired by [f90nml](https://github.com/marshallward/f90nml) and [glmtools](https://github.com/USGS-R/glmtools).
