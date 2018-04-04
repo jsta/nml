@@ -29,10 +29,14 @@ devtools::install_github("jsta/nml")
 
 ## Example
 
+### Using the R parser
+
 ```{r }
 library(nml)
 read_nml("tests/testthat/sample.nml")
 ```
+
+### Using the python parser via the `reticulate` bridge
 
 ```{r }
 library(reticulate)

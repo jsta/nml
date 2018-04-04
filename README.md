@@ -20,6 +20,8 @@ devtools::install_github("jsta/nml")
 Example
 -------
 
+### Using the R parser
+
 ``` r
 library(nml)
 read_nml("tests/testthat/sample.nml")
@@ -43,6 +45,8 @@ read_nml("tests/testthat/sample.nml")
 #> attr(,"class")
 #> [1] "nml"
 ```
+
+### Using the python parser via the `reticulate` bridge
 
 ``` r
 library(reticulate)
