@@ -46,14 +46,14 @@ read_nml("tests/testthat/sample.nml")
 #> [1] "nml"
 ```
 
-### Using the python parser via the `reticulate` bridge
+### Using the `f90nml` python parser via the `reticulate` bridge
 
 ``` r
 library(reticulate)
 use_python("/home/jose/anaconda3/bin/python")
 
 f90nml <- import("f90nml")
-pd <- import("pandas")
+pd     <- import("pandas")
 
 nml <- f90nml$read("tests/testthat/sample.nml")
 
