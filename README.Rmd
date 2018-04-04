@@ -29,7 +29,10 @@ devtools::install_github("jsta/nml")
 
 ## Example
 
-Forthcoming!
+```{r }
+library(nml)
+read_nml("tests/testthat/sample.nml")
+```
 
 ## Prior Art
 

@@ -20,7 +20,29 @@ devtools::install_github("jsta/nml")
 Example
 -------
 
-Forthcoming!
+``` r
+library(nml)
+read_nml("tests/testthat/sample.nml")
+#> $config_nml
+#> $config_nml$input
+#> [1] "wind.nc"
+#> 
+#> $config_nml$steps
+#> [1] 864
+#> 
+#> $config_nml$layout
+#> [1]  8 16
+#> 
+#> $config_nml$visc
+#> [1] 1e-04
+#> 
+#> $config_nml$use_biharmonic
+#> [1] FALSE
+#> 
+#> 
+#> attr(,"class")
+#> [1] "nml"
+```
 
 Prior Art
 ---------
