@@ -1,0 +1,11 @@
+&config_nml
+   input = 'wind.nc'
+   steps = 864
+   layout = 8, 16
+   visc = 1e-4
+   use_biharmonic = .false.
+   csv_outlet_vars = !'flow',
+                     'temp',
+                     'salt',
+                     'aed_oxygen_oxy'
+/
