@@ -8,7 +8,8 @@
 #'@author
 #'Jordan S. Read
 #'@examples \dontrun{
-#'sim_nml <- read_nml()
+#'fpath <- system.file("extdata/glm2.nml", package = "nml")
+#'sim_nml <- read_nml(fpath)
 #'print(sim_nml)
 #'}
 #'@export
@@ -71,7 +72,7 @@ read_nml  <-	function(nml_file){
 
 nml_path_norm <- function(nml_file){
   if (!is_nml_file(nml_file)){
-    stop(nml_file, ' is not of file type *.nml')
+    warning(nml_file, ' is not of file type .nml')
   }
 
   return(nml_file)
