@@ -24,7 +24,7 @@ read_nml  <-	function(nml_file){
   c <- file(nml_file,"r")
   fileLines <- readLines(c)
   close(c)
-  lineStart	<-	substr(fileLines,1,1)
+  lineStart	<-	substr(trimws(fileLines, which = 'left'),1,1)
   # ignore comment lines or empty lines
   ignoreLn	<-	lineStart=='!' | fileLines==""
   lineStart	<-	lineStart[!ignoreLn]
