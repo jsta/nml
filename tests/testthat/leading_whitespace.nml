@@ -1,0 +1,27 @@
+!
+! DOMAIN dimension Stanza
+!
+ &dimparam
+ iy     = 530,   ! This is number of points in the N/S direction
+ jx     = 530,   ! This is number of points in the E/W direction
+ kz     = 23,   ! Number of vertical levels
+ dsmin  = 0.01, ! Minimum sigma spacing (only used if kz is not 14, 18, or 23)
+ dsmax  = 0.05, ! Maximum sigma spacing (only used if kz is not 14, 18, or 23)
+ nsg    = 1,    ! For subgridding, number of points to decompose. If nsg=1,
+                ! no subgridding is performed. CLM does NOT work as of now with
+                ! subgridding enabled.
+ njxcpus = -1,  ! Number of CPUS to be used in the jx (lon) dimension.
+                ! If <=0 , the executable will try to figure out a suitable
+                ! decomposition.
+ niycpus = -1,  ! Number of CPUS to be used in the iy (lat) dimension.
+                ! If <=0 , the executable will try to figure out a suitable
+                ! decomposition.
+ /
+!
+! Choice of the dynamical core
+!
+ &coreparam
+ idynamic = 1,  ! Choice of dynamical core
+                ! 1 = MM4 hydrostatical core
+                ! 2 = MM5 NON hydrostatical core
+ /
