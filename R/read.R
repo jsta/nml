@@ -25,8 +25,8 @@ read_nml  <-	function(nml_file){
   fileLines <- readLines(c)
   close(c)
   lineStart	<-	substr(trimws(fileLines, which = 'left'),1,1)
-  # ignore comment lines or empty lines
-  ignoreLn	<-	lineStart=='!' | fileLines==""
+  # ignore comment lines or lines of white space only
+  ignoreLn	<-	lineStart=='!' | fileLines=="" | fileLines=="\t"
   lineStart	<-	lineStart[!ignoreLn]
   fileLines	<-	fileLines[!ignoreLn]
   # find all lines which start with "&" * requires FIRST char to be value
@@ -40,6 +40,9 @@ read_nml  <-	function(nml_file){
   for (i in 1:length(blckOpen)){
     blckName	<-	substr(fileLines[blckOpen[i]],2,nchar(fileLines[blckOpen[i]]))
     blckName <- gsub("\\s", "", blckName)
+    if (grepl("!", blckName)) { # remove everything from first "!" if present in block name
+        blckName <- base::substr(blckName, 1, regexpr("!", blckName)-1)
+    }
     oldNms	<-	names(nml)
     nml[[i]]	<-	list()
     names(nml)	<-	c(oldNms,blckName)

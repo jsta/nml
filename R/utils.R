@@ -52,7 +52,12 @@ buildVal	<-	function(textLine, lineNum, blckName){
   }else if (any(grep(",",parVl))){	# comma-sep-nums
     parVl	<-	c(as.numeric(unlist(strsplit(parVl,","))))
   }else {	# test for number
-    parVl	<-	as.numeric(parVl)
+    ret <- base::tryCatch(as.numeric(parVl), error = function(e) NULL)
+    if (is.na(ret)) { # no success
+        # fallback value: keep as string; nothing to do
+    } else {
+        parVl	<-	as.numeric(parVl)
+    }
   }
   lineVal	<-	list(parVl)
   names(lineVal)	<-	parNm
