@@ -1,8 +1,8 @@
 Package: nml
 Title: An R Package for Parsing Fortran Namelist Files
 Version: 0.0.1
-Author: Joseph Stachelek <stachel2@msu.edu>
-Maintainer: Joseph Stachelek <stachel2@msu.edu>
+Author: Jemma Stachelek <stachel2@msu.edu>
+Maintainer: Jemma Stachelek <stachel2@msu.edu>
 Description: An R package for parsing Fortran namelist files.
 Depends: R (>= 3.4.0)
 License: GPL-3 + file LICENSE
